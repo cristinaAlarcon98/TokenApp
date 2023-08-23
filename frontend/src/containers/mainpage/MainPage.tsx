@@ -13,7 +13,7 @@ export const MainPage = () => {
     const [generatedToken, setGeneratedToken] = useState<String>(null)
     const getTokenValidation = async () => {
         const isValid = await validateToken(validateInputValue);
-        setTokenValidation(isValid ? 'The Token is valid!' : 'The Token is NOT valid...')
+        setTokenValidation(isValid ? 'The token is valid!' : 'The Token is NOT valid...')
     };
     const getGeneratedToken = async () => {
         const token = await generateToken(generateInputValue);
@@ -54,7 +54,7 @@ export const MainPage = () => {
                     <Grid item container xs={12} sx={{justifyContent: 'center', marginTop: '50px'}}>
                         <Box sx={outputBox}>
                             {(!generatedToken || generateInputValue?.length < 1) ?
-                                <Typography variant="h2">{'Your Generated Token'}</Typography> :
+                                <Typography variant="h2">{'Your generated Token'}</Typography> :
                                 <Typography variant="h2">{generatedToken}</Typography>
                             }
                         </Box>
@@ -102,7 +102,7 @@ export const MainPage = () => {
                     <Grid item container xs={12} sx={{justifyContent: 'center', marginTop: '50px'}}>
                         <Box sx={outputBox}>
                             {(!tokenValidation || validateInputValue.length < 16) ?
-                                <Typography variant="h2">{'Enter Token'}</Typography>
+                                <Typography variant="h2">{'Input Token to validate'}</Typography>
                                 :
                                 <Typography variant="h2">{tokenValidation}</Typography>
                             }
